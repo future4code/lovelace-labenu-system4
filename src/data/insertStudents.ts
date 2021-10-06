@@ -1,7 +1,5 @@
 import { connection } from './connection';
 
-
-
 export default async function insertStudents(
 
     id:string,
