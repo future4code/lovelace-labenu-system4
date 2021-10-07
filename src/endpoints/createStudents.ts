@@ -1,5 +1,4 @@
 import {Request, Response} from 'express';
-// import moment from 'moment';
 import insertStudents from '../data/insertStudents';
 
 
@@ -20,7 +19,7 @@ export default async function createStudents(
                 
 
             ){ res.status(400).send({
-               message:'Preencha os campos "name","email" e "data"'
+               message:'Preencha os campos "name","email" e "data" e "hobbie"'
              })
              return 
                

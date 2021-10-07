@@ -5,7 +5,7 @@ export default async function insertTeacher(
     id: string,
     nome:string,
     email:string,
-    data_nascimento:Date,
+    data_nascimento:string,
     especialidade: ESPECIALIDADE,
     class_id:string
 ){

@@ -1,5 +1,4 @@
 import {Request, Response} from 'express';
-// import moment from 'moment';
 import insertTeacher from '../data/insertTeacher';
 
 export default async function createTeacher(
@@ -20,7 +19,7 @@ export default async function createTeacher(
                 
 
             ){ res.status(400).send({
-               message:'Preencha os campos!"'
+               message:'Preencha todos os campos, "nome", "email", "data_nascimento", "especialidade"'
              })
              return 
                
@@ -43,6 +42,9 @@ export default async function createTeacher(
                     id,
                     name: req.body.nome,
                     email: req.body.email,
+                    data_nascimento: req.body.data_nascimento,
+                    especialidade: req.body.especialidade,
+                    class_id: req.body.class_id
 
                     
                 })

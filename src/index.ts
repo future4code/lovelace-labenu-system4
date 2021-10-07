@@ -3,14 +3,15 @@ import cors from "cors";
 import { AddressInfo } from "net";
 import createStudents from "./endpoints/createStudents";
 import createTeacher from "./endpoints/createTeachers";
+import createClass from "./endpoints/createClass";
 
 const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-app.put('/students', createStudents)
+app.post('/students', createStudents)
 app.post('/teacher', createTeacher)
-
+app.post('/class', createClass)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
