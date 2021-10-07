@@ -47,6 +47,9 @@ export default async function createClass(
                 message: 'Classe criado com sucesso!',
                 id,
                 name: req.body.nome,
+                inicio: req.body.data_inicio,
+                termino: req.body.data_termino,
+                modulo: req.body.modulo
                 
             })
 

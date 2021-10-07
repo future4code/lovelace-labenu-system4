@@ -8,6 +8,7 @@ export enum ESPECIALIDADE {
     BACKEND = 'Backend'
  }
 
+
  export enum MODULO {
    ZERO = '0', 
    UM = '1',
