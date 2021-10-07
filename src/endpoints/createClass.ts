@@ -6,13 +6,16 @@ export default async function createClass(
     res:Response
 
 ){
+    
+    const { nome, data_inicio, data_termino, modulo } = req.body
+
     try {
 
         if(
-            !req.body.nome ||
-            !req.body.data_inicio ||
-            !req.body.data_termino ||
-            !req.body.modulo
+            !nome ||
+            !data_inicio ||
+            !data_termino ||
+            !modulo
 
         ){res.status(400).send({
             message:'Preencha os campos "nome","inicio", "termino" e "modulo"'
@@ -20,24 +23,36 @@ export default async function createClass(
           return 
         }
 
+
+        function formatDate(date: string): string {
+            const day = date.split("/")[0];
+            const month = date.split("/")[1];
+            const year = date.split("/")[2];
+            return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
+        }
+        
+        const formattedDataInicio: string = formatDate(data_inicio)
+
+        const formattedDataTermino: string = formatDate(data_termino)
+
         const id: string = Date.now() + Math.random().toString()
 
         await insertClass(
             id,
-            req.body.nome,
-            req.body.data_inicio,
-            req.body.data_termino,
-            req.body.modulo
+            nome,
+            data_inicio,
+            data_termino,
+            modulo
         )
 
         res
         .status(200).send({
             message:'Turma criada com sucesso!',
             id,
-            nome: req.body.nome,
-            inicio: req.body.data_inicio,
-            termino: req.body.data_termino,
-            modulo: req.body.modulo
+            nome: nome,
+            inicio: data_inicio,
+            termino: data_termino,
+            modulo: modulo
             
         })
 

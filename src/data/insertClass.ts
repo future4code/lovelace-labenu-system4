@@ -8,7 +8,7 @@ export default async function (
     nome:string,
     data_inicio:string,
     data_termino:string,
-    modulo:MODULO
+    modulo:MODULO[]
 
 ){
     await connection.insert(
