@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-// import moment from 'moment';
 import insertTeacher from '../data/insertTeacher';
 
 export default async function createTeacher(
@@ -7,21 +6,22 @@ export default async function createTeacher(
     req: Request,
     res: Response
 
+){
 
-) {
+    const {nome, email,data_nascimento, class_id} = req.body
+
     try {
 
         if (
-            !req.body.nome ||
-            !req.body.email ||
-            !req.body.data_nascimento ||
-            !req.body.especialidade ||
-            !req.body.class_id
+            !nome ||
+            !email ||
+            !data_nascimento ||
+            !class_id
 
 
         ) {
             res.status(400).send({
-                message: 'Preencha os campos!"'
+                message: 'Preencha todos os campos "nome", "email", "data_nascimento" e "class_id"'
             })
             return
 
@@ -36,23 +36,24 @@ export default async function createTeacher(
             return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
         }
 
-        const formattedBirthDate: string = formatDate(req.body.data_nascimento)
+        const formattedDataNascimento: string = formatDate(data_nascimento)
 
         await insertTeacher(
             id,
-            req.body.nome,
-            req.body.email,
-            formattedBirthDate,
-            req.body.especialidade,
-            req.body.class_id,
+            nome,
+            email,
+            formattedDataNascimento,
+            class_id,
 
         )
         res
             .status(200).send({
                 message: 'Professor criado com sucesso!',
                 id,
-                name: req.body.nome,
-                email: req.body.email,
+                name:nome,
+                email:email,
+                data_nascimento: formattedDataNascimento,
+                class_id: class_id
             })
 
 

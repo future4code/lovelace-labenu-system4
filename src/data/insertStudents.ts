@@ -6,7 +6,7 @@ export default async function insertStudents(
     name:string,
     email:string,
     data:string,
-    hobbie:string
+    class_id:string
    
 
 ){
@@ -16,7 +16,7 @@ export default async function insertStudents(
             name,
             email,
             data_nasc:data,
-            hobbie
+            class_id
           
         }
     ).into('students') 

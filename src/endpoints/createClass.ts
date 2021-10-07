@@ -7,19 +7,20 @@ export default async function createClass(
 
     req: Request,
     res: Response
-
-
 ) {
+
+    const {nome, data_inicio,data_termino, modulo} = req.body
+
     try {
 
         if (
-            !req.body.nome ||
-            !req.body.data_inicio ||
-            !req.body.data_termino ||
-            !req.body.modulo
+            !nome ||
+            !data_inicio ||
+            !data_termino ||
+            !modulo
         ) {
             res.status(400).send({
-                message: 'Preencha os campos!"'
+                message: 'Preencha todos os campos "nome","data_inicio", "data_termino" e "modulo"'
             })
             return
 
@@ -33,25 +34,25 @@ export default async function createClass(
             return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
         }
 
-        const formattedDate1: string = formatDate(req.body.data_inicio)
-        const formattedDate2: string = formatDate(req.body.data_termino)
+        const formattedDate1: string = formatDate(data_inicio)
+        const formattedDate2: string = formatDate(data_termino)
 
         await insertClass(
             id,
-            req.body.nome,
+            nome,
             formattedDate1,
             formattedDate2,
-            req.body.modulo
+            modulo
 
         )
         res
             .status(200).send({
-                message: 'Classe criado com sucesso!',
+                message: 'Classe criada com sucesso!!!',
                 id,
-                name: req.body.nome,
-                inicio: req.body.data_inicio,
-                termino: req.body.data_termino,
-                modulo: req.body.modulo
+                nome: nome,
+                inicio: data_inicio,
+                termino: data_termino,
+                modulo: modulo
                 
             })
 
