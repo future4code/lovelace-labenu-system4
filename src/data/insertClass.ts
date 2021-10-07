@@ -6,8 +6,8 @@ export default async function (
     
     id:string,
     nome:string,
-    inicio:string,
-    termino:string,
+    data_inicio:string,
+    data_termino:string,
     modulo:MODULO
 
 ){
@@ -15,8 +15,8 @@ export default async function (
         {
             id,
             nome,
-            data_inicio: inicio,
-            data_termino: termino,
+            data_inicio,
+            data_termino,
             modulo
         }
     ).into('Class')

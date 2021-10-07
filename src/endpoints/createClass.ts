@@ -10,8 +10,8 @@ export default async function createClass(
 
         if(
             !req.body.nome ||
-            !req.body.incio ||
-            !req.body.termino ||
+            !req.body.data_inicio ||
+            !req.body.data_termino ||
             !req.body.modulo
 
         ){res.status(400).send({
@@ -25,8 +25,8 @@ export default async function createClass(
         await insertClass(
             id,
             req.body.nome,
-            req.body.inicio,
-            req.body.termino,
+            req.body.data_inicio,
+            req.body.data_termino,
             req.body.modulo
         )
 
@@ -35,8 +35,8 @@ export default async function createClass(
             message:'Turma criada com sucesso!',
             id,
             nome: req.body.nome,
-            inicio: req.body.inicio,
-            termino: req.body.termino,
+            inicio: req.body.data_inicio,
+            termino: req.body.data_termino,
             modulo: req.body.modulo
             
         })
