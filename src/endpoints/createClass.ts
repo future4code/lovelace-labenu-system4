@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
-// import moment from 'moment';
-import insertTeacher from '../data/insertTeacher';
+import insertClass from '../data/insertClass';
 
-export default async function createTeacher(
+export default async function createClass(
 
     req: Request,
     res: Response
@@ -13,12 +12,9 @@ export default async function createTeacher(
 
         if (
             !req.body.nome ||
-            !req.body.email ||
-            !req.body.data_nascimento ||
-            !req.body.especialidade ||
-            !req.body.class_id
-
-
+            !req.body.data_inicio ||
+            !req.body.data_termino ||
+            !req.body.modulo
         ) {
             res.status(400).send({
                 message: 'Preencha os campos!"'
@@ -28,7 +24,6 @@ export default async function createTeacher(
         }
 
         const id: string = Date.now() + Math.random().toString()
-
         function formatDate(date: string): string {
             const day = date.split("/")[0];
             const month = date.split("/")[1];
@@ -36,23 +31,23 @@ export default async function createTeacher(
             return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
         }
 
-        const formattedBirthDate: string = formatDate(req.body.data_nascimento)
+        const formattedDate1: string = formatDate(req.body.data_inicio)
+        const formattedDate2: string = formatDate(req.body.data_termino)
 
-        await insertTeacher(
+        await insertClass(
             id,
             req.body.nome,
-            req.body.email,
-            formattedBirthDate,
-            req.body.especialidade,
-            req.body.class_id,
+            formattedDate1,
+            formattedDate2,
+            req.body.modulo
 
         )
         res
             .status(200).send({
-                message: 'Professor criado com sucesso!',
+                message: 'Classe criado com sucesso!',
                 id,
                 name: req.body.nome,
-                email: req.body.email,
+                
             })
 
 
