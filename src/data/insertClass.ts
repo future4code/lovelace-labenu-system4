@@ -1,24 +1,21 @@
-import { MODULO} from '../types';
 import { connection } from './connection';
+import { MODULO } from '../types';
 
+export default async function insertClass(
+    id: string,
+    nome: string,
+    data_inicio: string,
+    data_termino: string,
+    modulo: MODULO[],
 
-export default async function (
-    
-    id:string,
-    nome:string,
-    data_inicio:string,
-    data_termino:string,
-    modulo:MODULO
-
-){
+) {
     await connection.insert(
         {
             id,
             nome,
             data_inicio,
             data_termino,
-            modulo
+            modulo,
         }
     ).into('Class')
-
 }

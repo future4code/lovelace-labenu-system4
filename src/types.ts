@@ -8,13 +8,14 @@ export enum ESPECIALIDADE {
     BACKEND = 'Backend'
  }
 
- export enum MODULO{
-     INICIAR = '0',
-     MODULO1 = '1',
-     MODULO2 = '2',
-     MODULO3 = '3',
-     MODULO4 = '4',
-     MODULO5 = '5',
-     MODULO6 = '6',
-     MODULO7 = '7'
+
+ export enum MODULO {
+   ZERO = '0', 
+   UM = '1',
+   DOIS = '2', 
+   TRêS ='3', 
+   QUATRO ='4',
+   CINCO = '5',
+   SEIS = '6',
+   SETE = '7'
  }
