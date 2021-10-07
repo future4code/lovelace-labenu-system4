@@ -6,7 +6,7 @@ export default async function insertTeacher(
     nome:string,
     email:string,
     data_nascimento:string,
-    especialidade: ESPECIALIDADE,
+    especialidade: ESPECIALIDADE[],
     class_id:string
 ){
     await connection.insert(
@@ -18,5 +18,5 @@ export default async function insertTeacher(
             especialidade,
             class_id
         }
-    ).into('Teacher') 
+    ).into('Teacher')
 }
