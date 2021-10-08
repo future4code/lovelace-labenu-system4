@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
 import selectAgeStudentById from '../data/selectAgeStudentById';
+import { connection } from '../data/connection';
+
 
 export default async function getAgeStudentById(
     req:Request,
@@ -16,18 +18,14 @@ export default async function getAgeStudentById(
             })
 
         }
-        // async function idade(data_nasc:Date, hoje:Date):Promise<any> {
-        //     var diferencaAnos = hoje.getFullYear() - data_nasc.getFullYear();
-        //     if ( new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate()) < 
-        //          new Date(hoje.getFullYear(), data_nasc.getMonth(), data_nasc.getDate()) )
-        //         diferencaAnos--;
-        // }
+            const result =  await connection('students')
+            const newData = new Date(result[0].data_nasc)
+            const dateAtual= new Date()
+            const age = dateAtual.getFullYear() - newData.getFullYear()
 
             res.status(200).send({
                 message:'Sucesso!!',
-                student: student.id,
-                name: student.name,
-                age: student.data_nasc 
+                idade:age
             })
 
 
