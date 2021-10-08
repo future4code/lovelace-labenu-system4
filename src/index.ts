@@ -8,6 +8,7 @@ import createSpecialty from "./endpoints/createSpecialty ";
 import createHobbie from "./endpoints/createHobbie";
 import createTeacherWhithSpecialty from "./endpoints/createTeacherWhithSpecialty";
 import createStudentWithHobby from "./endpoints/createStudentWithHobby";
+import getAgeStudentById from "./endpoints/getAgeStudentById";
 
 const app: Express = express();
 app.use(express.json());
@@ -20,6 +21,7 @@ app.post('/specialty', createSpecialty)
 app.post('/hobbie', createHobbie)
 app.post('/teacher_specialty', createTeacherWhithSpecialty)
 app.post('/student_hobbie', createStudentWithHobby)
+app.get('/student/:id', getAgeStudentById)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
