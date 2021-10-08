@@ -9,14 +9,17 @@ export default async function createStudents(
 
 
 ){
+
+    const {name, email, data, class_id} = req.body
+
     try {
          
             if(
-                !req.body.name ||
-                !req.body.email ||
-                !req.body.data ||
-                !req.body.hobbie
-                
+                !name ||
+                !email ||
+                !data ||
+                !class_id
+
 
             ){ res.status(400).send({
                message:'Preencha os campos "name","email" e "data" e "hobbie"'
@@ -25,24 +28,33 @@ export default async function createStudents(
                
         }
 
+        function formatDate(date: string): string {
+            const day = date.split("/")[0];
+            const month = date.split("/")[1];
+            const year = date.split("/")[2];
+            return year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
+        }
+
+        const formattedData: string = formatDate(data)
+
                 const id: string = Date.now() + Math.random().toString()
 
                 await insertStudents(
                     id,
-                    req.body.name,
-                    req.body.email,
-                    req.body.data,
-                    req.body.hobbie
+                    name,
+                    email,
+                    formattedData,
+                    class_id
                 )
                 res
                 .status(200).send({
                     message:'Estudante criado com sucesso!',
                     id,
-                    name: req.body.name,
-                    email: req.body.email,
-                    data:req.body.data,
-                    hobbie: req.body.hobbie
-                    
+                    name:name,
+                    email:email,
+                    data:formattedData,
+                    class_id: class_id
+                   
                 })
                
 
