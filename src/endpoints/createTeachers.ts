@@ -21,7 +21,7 @@ export default async function createTeacher(
 
         ) {
             res.status(400).send({
-                message: 'Preencha todos os campos "nome", "email", "data_nascimento" e "class_id"'
+                message: 'Preencha o campo nome com sua especialidade especifica: '
             })
             return
 

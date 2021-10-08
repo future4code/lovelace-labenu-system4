@@ -1,5 +1,5 @@
 import { connection } from './connection';
-import { ESPECIALIDADE } from '../types';
+
 
 export default async function insertTeacher(
     id: string,
