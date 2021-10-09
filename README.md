@@ -36,4 +36,34 @@ TypeScript
 
 ## Fotos Postman 
 
+
+# Criando uma Turma : endpoint : http://localhost:3003/class
+![criando classe](https://user-images.githubusercontent.com/85313042/136660171-b8d23e45-8743-4af6-bda3-e5d427ce4b3c.png)
+
+
+# Criando Professor : endpoint : http://localhost:3003/teacher
+![criando professor](https://user-images.githubusercontent.com/85313042/136660280-a2d87dea-7cc3-4f96-8cea-65f6848cf952.png)
+
+# Criando Aluno : endpoint: http://localhost:3003/students
+![criando estudante](https://user-images.githubusercontent.com/85313042/136660325-f47f6b8b-e296-42f1-afc6-3d7d6a32a209.png)
+
+# Criando Hobbie : endpoint : http://localhost:3003/hobbie
+![criando hobbie](https://user-images.githubusercontent.com/85313042/136660361-d18c3fdb-fc37-41f7-a782-3dab91b437a7.png)
+
+# Criando especialidade : endpoint : http://localhost:3003/specialty
+![criando especialidade](https://user-images.githubusercontent.com/85313042/136660384-a048b2fd-1f2a-445b-8788-ad8eb1d835d4.png)
+
+# União Professor com especialidade : endpoint : http://localhost:3003/teacher_specialty
+![criando professor e especialidade](https://user-images.githubusercontent.com/85313042/136660437-f616d58d-8865-4a12-9979-311b41800d09.png)
+
+# União Estudante com hobbie : endpoint : http://localhost:3003/student_hobbie
+![criando hobbie e estudante](https://user-images.githubusercontent.com/85313042/136660481-2d427d50-690d-4fd4-8965-646b827c75c3.png)
+
+# Buscando Idade pelo ID do Aluno : endpoint : http://localhost:3003/student/:id
+![criando buscar estudante pelo id](https://user-images.githubusercontent.com/85313042/136660505-c596837e-3931-4af3-a284-e40d4283a86d.png)
+
+
+
+
+
 ## Link do deploy
