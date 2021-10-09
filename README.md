@@ -1,33 +1,39 @@
-## LabenuSystem:
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+## Projeto LabenuSystem
 
-1. Estudantes 
+## Desenvolvedores
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+Israel Martins Cordeiro, Clarice Medeiros Passos e Lucas Lameirinhas
 
-2. Docente
+## Tecnologias utilizadas
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
+TypeScript 
 
-3. Turma
+## Funcionalidades
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
+-Endpoint de Criar uma Classe
 
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
+-Endpoint de Criar um estudante 
 
-As funcionalidades básicas são:
+-Endpoint de Criar um Professor 
 
-→ Criar estudante;
+-Endpoint de Criar uma Especialidade (relacionado a especialidade exercida pelo professor)
 
-→ Criar docente;
+-Endpoint de Criar um Hobbie (relacionado ao hobbie do estudante)
 
-→ Criar turma;
+-Endpoint de União do professor com a especialidade exercida por ele 
 
-→ Adicionar estudante na turma;
+-Endpoint de União do estudante com o seu hobbie
 
-→ Adicionar docente na turma;
+-Endpoint de buscando a idade pelo ID do estudante
 
-→ Pegar a idade de algum estudante a partir do id
+## Fluxo de criação
+
+-Primeiro criamos o endpoint de criar uma turma, logo após criamos os endpoints de estudante e professor, que já são passados as suas respectivas turma pois as tabelas exigem o id da turma para isso, logo após criamos os endpoints de hobbie e especialidade em que geram seus ids unicos, em seguida criamos os endpoints de união do professor e sua especialidade (que exige os id do professor e da especialidade para a união) e do aluno com seu hobbie (que exige o id do aluno e do hobbie para a união) e por fim criamos o endpoint de buscar a idade pelo id do estudante.
+
+## Fotos Tabelas
+
+## Fotos Postman 
+
+## Link do deploy
