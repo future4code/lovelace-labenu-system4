@@ -8,7 +8,7 @@ export default async function createTeacher(
 
 ){
 
-    const {nome, email,data_nascimento, class_id} = req.body
+    const {nome, email, data_nascimento, especialidade, class_id} = req.body
 
     try {
 
@@ -16,12 +16,13 @@ export default async function createTeacher(
             !nome ||
             !email ||
             !data_nascimento ||
+            !especialidade ||
             !class_id
 
 
         ) {
             res.status(400).send({
-                message: 'Preencha o campo nome com sua especialidade especifica: '
+                message: 'Preencha todos os campos!'
             })
             return
 
@@ -43,6 +44,7 @@ export default async function createTeacher(
             nome,
             email,
             formattedDataNascimento,
+            especialidade,
             class_id,
 
         )
@@ -53,6 +55,7 @@ export default async function createTeacher(
                 name:nome,
                 email:email,
                 data_nascimento: formattedDataNascimento,
+                especialidade: especialidade,
                 class_id: class_id
             })
 

@@ -22,7 +22,7 @@ export default async function createStudents(
 
 
             ){ res.status(400).send({
-               message:'Preencha os campos "name","email" e "data" e "hobbie"'
+               message:'Preencha os campos "name","email" e "data" e "class_id"'
              })
              return 
                

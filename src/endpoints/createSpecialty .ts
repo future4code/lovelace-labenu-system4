@@ -30,7 +30,7 @@ export default async function createSpecialty(
 
         res
         .status(200).send({
-            message: 'Especialidade craiada com Sucesso!!!',
+            message: 'Especialidade criada com sucesso!!!',
             id,
             nome:nome
 

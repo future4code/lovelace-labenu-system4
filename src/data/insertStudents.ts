@@ -15,7 +15,7 @@ export default async function insertStudents(
             id,
             name,
             email,
-            data_nasc:data,
+            data:data,
             class_id
           
         }
