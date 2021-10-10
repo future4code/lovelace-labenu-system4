@@ -19,9 +19,7 @@
     "url": "https://github.com/future4code/lovelace-labenu-system4/issues"
   },
   "homepage": "https://github.com/future4code/lovelace-labenu-system4#readme",
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "dependencies": {
     "@types/knex": "^0.16.1",
     "cors": "^2.8.5",
